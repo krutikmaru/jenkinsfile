@@ -4,13 +4,13 @@ pipeline {
         stage('DELETION') { 
             steps {
                 echo '--REMOVING REPOSITORY IF ALREADY EXIST --'
-                sh "sudo rm -rf tobedeleted"
+                sh "sudo rm -rf jenkinsfile"
             }
         }
        stage('CLONE') { 
             steps {
                 echo '--CLONE STAGE EXECUTION ---'
-    sh "https://github.com/krutikmaru/tobedeleted.git"
+    sh "https://github.com/krutikmaru/jenkinsfile.git"
             }
         }
         stage('TEST1') { 
@@ -26,7 +26,7 @@ pipeline {
         stage('BUILD') { 
             steps {
     echo '--BUILD STAGE EXECUTION --'
-    sh "node JavaScript/add.js"
+    sh "node app.js"
             }
         }
   stage('DEPLOY') { 
